@@ -1,43 +1,18 @@
-<div class="login-page">
-  <div class="form">
-    <form class="login-form">
-      <input
-        type="email"
-        name="email"
-        placeholder="Correo electrónico"
-        [(ngModel)]="email" required
-        pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}"
-        minlength="6"
-        #emailInput="ngModel"
-      >
-      <div
-        class="alert alert-warning"
-        role="alert"
-        *ngIf="emailInput.dirty && emailInput.errors"
-      >
-        <p *ngIf="emailInput.errors.required">
-          Campo requerido.
-        </p>
-
-        <p *ngIf="emailInput.errors.pattern">
-          Debe de ser un correo valido
-        </p>
-        <p *ngIf="emailInput.errors.minlength">
-          Debe tener minimo de 6 caracteres
-        </p>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4 offset-sm-6">
+      <div class="form-login">
+        <h4>Por favor identifícate.</h4>
+        <input type="email" id="userName" class="form-control input-sm chat-input" placeholder="Correo electrónico"/>
+        <br>
+        <input type="password" id="userPassword" class="form-control input-sm chat-input" placeholder="Contraseña"/>
+        <br>
+        <div class="wrapper">
+            <span class="group-btn">
+                <a href="#" class="btn btn-primary btn-md">Login <i class="fa fa-sign-in"></i></a>
+            </span>
+        </div>
       </div>
-      <input
-        type="password"
-        name="password"
-        placeholder="Contraseña"
-        [(ngModel)]="password"
-      >
-      <button
-        class="btn btn-block btn-primary"
-        (click)="login()"
-      >
-        Login
-      </button>
-    </form>
+    </div>
   </div>
 </div>
